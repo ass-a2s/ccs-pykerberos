@@ -1,5 +1,5 @@
 ##
-# Copyright (c) 2006-2016 Apple Inc. All rights reserved.
+# Copyright (c) 2006-2018 Apple Inc. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -169,8 +169,9 @@ def authGSSClientInit(service, **kwargs):
 
 def authGSSClientClean(context):
     """
-    Destroys the context for GSSAPI client-side authentication. After this call
-    the context object is invalid and should not be used again.
+    Destroys the context for GSSAPI client-side authentication. This function
+    is provided for compatibility with earlier versions of PyKerberos but does
+    nothing. The context object destroys itself when it is reclaimed.
 
     @param context: The context object returned from L{authGSSClientInit}.
 
@@ -362,8 +363,9 @@ def authGSSServerInit(service):
 
 def authGSSServerClean(context):
     """
-    Destroys the context for GSSAPI server-side authentication.
-    After this call the context object is invalid and should not be used again.
+    Destroys the context for GSSAPI server-side authentication. This function
+    is provided for compatibility with earlier versions of PyKerberos but does
+    nothing. The context object destroys itself when it is reclaimed.
 
     @param context: The context object returned from L{authGSSClientInit}.
 
